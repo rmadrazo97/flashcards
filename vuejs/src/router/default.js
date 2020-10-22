@@ -2,7 +2,6 @@ import Full from 'Container/Full'
 
 // dashboard components
 const Crypto = () => import('Views/crypto/Crypto');
-const Ecommerce = () => import('Views/dashboard/Ecommerce');
 const WebAnalytics = () => import('Views/dashboard/WebAnalytics');
 const Magazine = () => import('Views/dashboard/Magazine');
 const News = () => import('Views/dashboard/News');
@@ -149,17 +148,72 @@ const Dropzone = () => import('Views/extensions/Dropzone');
 export default {
    path: '/',
    component: Full,
-   redirect: '/default/dashboard/ecommerce',
+   redirect: '/onecard/dashboard/one',
    children: [
-      {
-         path: '/default/dashboard/ecommerce',
-         component: Ecommerce,
-         meta: {
+        {
+          path: '/onecard/dashboard/one',
+          component: UsersList,
+          meta: {
             requiresAuth: true,
-            title: 'message.ecommerce',
-            breadcrumb: null
-         }
+            title: 'message.searchRow',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'Tables /'
+              },
+              {
+                breadcrumbActive: 'Search Row'
+              }
+            ]
+          }
       },
+      {
+        path: '/onecard/courses/list',
+        component: SearchWithText,
+        meta: {
+           requiresAuth: true,
+           title: 'message.searchRow',
+           breadcrumb: [
+             {
+               breadcrumbInactive: 'Tables /'
+             },
+             {
+               breadcrumbActive: 'Search Row'
+             }
+           ]
+        }
+     },
+     {
+      path: '/onecard/subjects/list',
+      component: SearchWithText,
+      meta: {
+         requiresAuth: true,
+         title: 'message.searchRow',
+         breadcrumb: [
+           {
+             breadcrumbInactive: 'Tables /'
+           },
+           {
+             breadcrumbActive: 'Search Row'
+           }
+         ]
+      }
+   },
+     {
+      path: '/onecard/cards/list',
+      component: SearchWithText,
+      meta: {
+         requiresAuth: true,
+         title: 'message.searchRow',
+         breadcrumb: [
+           {
+             breadcrumbInactive: 'Tables /'
+           },
+           {
+             breadcrumbActive: 'Search Row'
+           }
+         ]
+      }
+   },
       {
          path: '/default/dashboard/web-analytics',
          component: WebAnalytics,
@@ -1454,22 +1508,6 @@ export default {
             ]
          }
       },
-      {
-         path: '/default/users/users-list',
-         component: UsersList,
-         meta: {
-            requiresAuth: true,
-            title: 'message.usersList',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'Users /'
-              },
-              {
-                breadcrumbActive: 'Users List'
-              }
-            ]
-         }
-      },
       // drag and drop
       {
          path: '/default/drag-drop/vue2dragula',
@@ -1680,22 +1718,6 @@ export default {
               },
               {
                 breadcrumbActive: 'Selectable Rows'
-              }
-            ]
-         }
-      },
-      {
-         path: '/default/tables/searchwithtext',
-         component: SearchWithText,
-         meta: {
-            requiresAuth: true,
-            title: 'message.searchRow',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'Tables /'
-              },
-              {
-                breadcrumbActive: 'Search Row'
               }
             ]
          }

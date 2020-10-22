@@ -1,8 +1,7 @@
 <template>
     <div class="site-logo">
         <router-link to="/">
-            <img :src="darkLogo" alt="site logo" width="100" height="30" v-if="sidebarSelectedFilter.class == 'sidebar-overlay-light'">
-            <img :src="appLogo" alt="site logo" width="100" height="30" v-else>
+            <img src="https://img.icons8.com/ios/40/000000/flashcards.png"/> OneCard
         </router-link>
     </div>
 </template>
