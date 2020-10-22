@@ -1,23 +1,7 @@
 import Full from 'Container/Full'
 
-// dashboard components
-const Crypto = () => import('Views/crypto/Crypto');
-const WebAnalytics = () => import('Views/dashboard/WebAnalytics');
-const Magazine = () => import('Views/dashboard/Magazine');
-const News = () => import('Views/dashboard/News');
-const Agency = () => import('Views/dashboard/Agency');
-const Saas = () => import('Views/dashboard/Saas');
-
-// Crypto components
-const MarketCap = () => import('Views/crypto/MarketCap');
-const Wallet = () => import('Views/crypto/Wallet');
-const Trade = () => import('Views/crypto/Trade');
 
 // CRM components
-const Projects = () => import('Views/crm/Projects');
-const ProjectDetails = () => import('Views/crm/ProjectDetails');
-const Clients = () => import('Views/crm/Clients');
-const Reports = () => import('Views/crm/Reports');
 const Dashboard = () => import('Views/crm/Dashboard');
 
 //courses components
@@ -126,7 +110,10 @@ const SimpleTable = () => import('Views/tables/SimpleTable');
 const Standard = () => import('Views/tables/Standard');
 const Slots = () => import('Views/tables/Slots');
 const SelectableRows = () => import('Views/tables/SelectableRows');
-const SearchWithText = () => import('Views/tables/SearchWithText');
+// const SearchWithText = () => import('Views/tables/SearchWithText');
+const coursesList = () => import('Views/tables/coursesList');
+const subjectsList = () => import('Views/tables/subjectsList');
+const cardsList = () => import('Views/tables/flashCardsList');
 
 // Timelines component 
 const Usage = () => import('Views/timelines/Usage');
@@ -155,247 +142,54 @@ export default {
           component: UsersList,
           meta: {
             requiresAuth: true,
-            title: 'message.searchRow',
+            title: 'Dashboard',
             breadcrumb: [
               {
-                breadcrumbInactive: 'Tables /'
-              },
-              {
-                breadcrumbActive: 'Search Row'
+                breadcrumbActive: 'Dashboard'
               }
             ]
           }
       },
       {
         path: '/onecard/courses/list',
-        component: SearchWithText,
+        component: coursesList,
         meta: {
            requiresAuth: true,
-           title: 'message.searchRow',
+           title: 'Cursos',
            breadcrumb: [
              {
-               breadcrumbInactive: 'Tables /'
-             },
-             {
-               breadcrumbActive: 'Search Row'
+               breadcrumbActive: 'Cursos'
              }
            ]
         }
      },
      {
       path: '/onecard/subjects/list',
-      component: SearchWithText,
+      component: subjectsList,
       meta: {
          requiresAuth: true,
-         title: 'message.searchRow',
+         title: 'Temas',
          breadcrumb: [
            {
-             breadcrumbInactive: 'Tables /'
-           },
-           {
-             breadcrumbActive: 'Search Row'
+             breadcrumbActive: 'Temas'
            }
          ]
       }
    },
      {
       path: '/onecard/cards/list',
-      component: SearchWithText,
+      component: cardsList,
       meta: {
          requiresAuth: true,
-         title: 'message.searchRow',
+         title: 'FlashCards',
          breadcrumb: [
            {
-             breadcrumbInactive: 'Tables /'
-           },
-           {
-             breadcrumbActive: 'Search Row'
+             breadcrumbActive: 'Flash Cards'
            }
          ]
       }
    },
-      {
-         path: '/default/dashboard/web-analytics',
-         component: WebAnalytics,
-         meta: {
-            requiresAuth: true,
-            title: 'message.webAnalytics',
-            breadcrumb: null
-         }
-      },
-      {
-         path: '/default/dashboard/magazine',
-         component: Magazine,
-         meta: {
-            requiresAuth: true,
-            title: 'message.magazine',
-            breadcrumb: null
-         }
-      },
-      {
-         path: '/default/dashboard/news',
-         component: News,
-         meta: {
-            requiresAuth: true,
-            title: 'message.news',
-            breadcrumb: null
-         }
-      },
-
-      {
-         path: '/default/dashboard/agency',
-         component: Agency,
-         meta: {
-            requiresAuth: true,
-            title: 'message.agency',
-            breadcrumb: null
-         }
-      },
-
-      {
-         component: Saas,
-         path: '/default/dashboard/saas',
-         meta: {
-            requiresAuth: true,
-            title: 'message.saas',
-            breadcrumb: null
-         }
-      },
-
-      {
-         path: '/default/dashboard/crypto',
-         component: Crypto,
-         meta: {
-            requiresAuth: true,
-            title: 'message.crypto',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'Crypto /'
-              },
-              {
-                breadcrumbActive: 'Crypto'
-              }
-            ]
-         }
-      },
-      {
-         path: '/default/crypto/market-cap',
-         component: MarketCap,
-         meta: {
-            requiresAuth: true,
-            title: 'message.marketCap',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'Crypto /'
-              },
-              {
-                breadcrumbActive: 'MarketCap'
-              }
-            ]
-         }
-      },
-      {
-         path: '/default/crypto/trade',
-         component: Trade,
-         meta: {
-            requiresAuth: true,
-            title: 'message.trade',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'Crypto /'
-              },
-              {
-                breadcrumbActive: 'Trade'
-              }
-            ]
-         }
-      },
-      {
-         path: '/default/crypto/wallet',
-         component: Wallet,
-         meta: {
-            requiresAuth: true,
-            title: 'message.wallet',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'Crypto /'
-              },
-              {
-                breadcrumbActive: 'Wallet'
-              }
-            ]
-         }
-      },
-
-
-      {
-         path: '/default/crm/projects',
-         component: Projects,
-         meta: {
-            requiresAuth: true,
-            title: 'message.projects',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'CRM /'
-              },
-              {
-                breadcrumbActive: 'Projects'
-              }
-            ]
-         }
-      },
-
-      {
-         path: '/default/crm/projectDetails/:id',
-         component: ProjectDetails,
-         meta: {
-            requiresAuth: true,
-            title: 'message.projectDetails',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'CRM /'
-              },
-              {
-                breadcrumbActive: 'Project Details'
-              }
-            ]
-         }
-      },
-      
-      {
-         path: '/default/crm/clients',
-         component: Clients,
-         meta: {
-            requiresAuth: true,
-            title: 'message.clients',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'CRM /'
-              },
-              {
-                breadcrumbActive: 'Clients'
-              }
-            ]
-         }
-      },
-
-      {
-         path: '/default/crm/reports',
-         component: Reports,
-         meta: {
-            requiresAuth: true,
-            title: 'message.reports',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'CRM /'
-              },
-              {
-                breadcrumbActive: 'Reports'
-              }
-            ]
-         }
-      },
-      {
+    {
          path: '/default/dashboard/crm',
          component: Dashboard,
          meta: {

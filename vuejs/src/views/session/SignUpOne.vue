@@ -1,83 +1,83 @@
 <template>
 	<div class="session-wrapper">
-		<div class="session-left">
-			<session-slider-widget></session-slider-widget>
-		</div>
-		<div class="session-right text-center">
-			<div class="session-table-cell">
-				<div class="session-content">
-					<img 
-						:src="appLogo" 
-						class="img-responsive mb-4" 
-						width="78" 
-						height="78" 
-					/>
-					<h2 class="mb-4">{{$t('message.signUp')}}</h2>
-					<p class="fs-14">{{$t('message.havingAnAccount')}}
-						<router-link to="/session/login">{{$t('message.login')}}</router-link>
-					</p>
-					<v-form v-model="valid" class="mb-5">
-						<v-text-field 
-							label="Username" 
-							v-model="name" 
-							:rules="nameRules" 
-							:counter="20" 
-							required
-						></v-text-field>
-						<v-text-field 
-							label="E-mail ID" 
-							v-model="email" 
-							:rules="emailRules" 
-							required
-						></v-text-field>
-						<v-text-field 
-							label="Password" 
-							v-model="password" 
-							:rules="passwordRules" 
-							type="password" 
-							required
-						></v-text-field>
-						<v-btn large @click="submit" block color="primary" class="mb-4">{{$t('message.signUp')}}</v-btn>
-						<p>{{$t('message.bySigningUpYouAgreeTo')}} {{brand}}</p>
-						<router-link to="">{{$t('message.termsOfService')}}</router-link>
-					</v-form>
-					<div class="session-social-links d-inline-block">
-						<ul class="list-inline">
-							<li @click="signInWithFacebook">
-								<span class="facebook-bg session-icon">
-									<i class="ti-facebook"></i>
-								</span>
-							</li>
-							<li @click="signInWithGoogle">
-								<span class="google-bg session-icon">
-									<i class="ti-google"></i>
-								</span>
-							</li>
-							<li @click="signInWithTwitter">
-								<span class="twitter-bg session-icon">
-									<i class="ti-twitter-alt"></i>
-								</span>
-							</li>
-							<li @click="signInWithGithub">
-								<span class="github-bg session-icon">
-									<i class="ti-github"></i>
-								</span>
-							</li>
-						</ul>
+		<v-row class="d-flex justify-center mt-15">
+			<v-col cols="12" sm="12" md="4" lg="4" xl="4">
+				<div class=" text-center">
+					<div class="session-table-cell">
+						<div class="session-content">
+							<img 
+								src="https://img.icons8.com/ios-filled/50/000000/flashcards.png"
+								class="img-responsive mb-4" 
+								width="78" 
+								height="78" 
+							/>
+							<h2 class="mb-4">{{$t('message.signUp')}}</h2>
+							<p class="fs-14">{{$t('message.havingAnAccount')}}
+								<router-link to="/session/login">{{$t('message.login')}}</router-link>
+							</p>
+							<v-form v-model="valid" class="mb-5">
+								<v-text-field 
+									label="Username" 
+									v-model="name" 
+									:rules="nameRules" 
+									:counter="20" 
+									required
+								></v-text-field>
+								<v-text-field 
+									label="E-mail ID" 
+									v-model="email" 
+									:rules="emailRules" 
+									required
+								></v-text-field>
+								<v-text-field 
+									label="Password" 
+									v-model="password" 
+									:rules="passwordRules" 
+									type="password" 
+									required
+								></v-text-field>
+								<v-btn large @click="submit" block color="primary" class="mb-4">{{$t('message.signUp')}}</v-btn>
+								<p>{{$t('message.bySigningUpYouAgreeTo')}} {{brand}}</p>
+								<router-link to="">{{$t('message.termsOfService')}}</router-link>
+							</v-form>
+							<div class="session-social-links d-inline-block">
+								<ul class="list-inline">
+									<li @click="signInWithFacebook">
+										<span class="facebook-bg session-icon">
+											<i class="ti-facebook"></i>
+										</span>
+									</li>
+									<li @click="signInWithGoogle">
+										<span class="google-bg session-icon">
+											<i class="ti-google"></i>
+										</span>
+									</li>
+									<li @click="signInWithTwitter">
+										<span class="twitter-bg session-icon">
+											<i class="ti-twitter-alt"></i>
+										</span>
+									</li>
+									<li @click="signInWithGithub">
+										<span class="github-bg session-icon">
+											<i class="ti-github"></i>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			</v-col>
+		</v-row>
 	</div>
 </template>
 
 <script>
-import SessionSliderWidget from "Components/Widgets/SessionSlider";
 import AppConfig from "Constants/AppConfig";
 
 export default {
   components: {
-    SessionSliderWidget
+    
   },
   data() {
     return {
