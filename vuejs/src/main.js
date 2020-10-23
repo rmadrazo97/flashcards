@@ -14,7 +14,6 @@ import Notifications from 'vue-notification'
 import velocity from 'velocity-animate'
 import Nprogress from 'nprogress'
 import VueI18n from 'vue-i18n'
-import VueTour from 'vue-tour'
 import fullscreen from 'vue-fullscreen'
 import InstantSearch from 'vue-instantsearch'
 import VueVideoPlayer from 'vue-video-player';
@@ -78,7 +77,6 @@ router.afterEach(() => {
 
 Vue.use(InstantSearch);
 Vue.use(VueI18n)
-Vue.use(VueTour)
 Vue.use(Vue2Dragula)
 Vue.use(VueQuillEditor)
 Vue.use(VueResource)

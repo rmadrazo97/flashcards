@@ -64,14 +64,14 @@ export default {
     return {
       checkbox: false,
       valid: false,
-      email: "demo@example.com",
+      email: "",
       emailRules: [
         v => !!v || "E-mail is required",
         v =>
           /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
           "E-mail must be valid"
       ],
-      password: "test#123",
+      password: "",
       passwordRules: [v => !!v || "Password is required"],
       appLogo: AppConfig.appLogo2,
       brand: AppConfig.brand

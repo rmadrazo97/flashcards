@@ -33,7 +33,6 @@
 						<img src="/static/img/site-logo.png" alt="site logo" width="100" height="30">
 					</router-link>
 				</div>
-				<v-text-field text solo prepend-icon="search" :placeholder="$t('message.search')" class="search-bar"></v-text-field>
 				<div class="mobile-search d-none">
 					<v-btn text icon  small class="mobile-search-btn" @click="toggleSearchForm">
 						<v-icon class="font-md">search</v-icon>
@@ -41,9 +40,7 @@
 				</div>
 			</div>
 			<div class="navbar-right">
-				<v-btn icon large @click="toggleFullScreen" class="full-screen ma-0">
-					<v-icon color="grey">fullscreen</v-icon>
-				</v-btn>
+				
 				<user></user>
 			</div>
 		</v-app-bar>

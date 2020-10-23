@@ -86,7 +86,9 @@ const Pricing2 = () => import('Views/pages/Pricing-2');
 
 // users views
 const UserProfile = () => import('Views/users/UserProfile');
-const UsersList = () => import('Views/users/UsersList');
+// const UsersList = () => import('Views/users/UsersList');
+const FlashCardsList = () => import('Views/users/flashCardsList');
+
 
 // drag-drop components
 const Vue2Dragula = () => import('Views/drag-drop/Vue2Dragula');
@@ -139,7 +141,7 @@ export default {
    children: [
         {
           path: '/onecard/dashboard/one',
-          component: UsersList,
+          component: FlashCardsList,
           meta: {
             requiresAuth: true,
             title: 'Dashboard',
@@ -154,26 +156,32 @@ export default {
         path: '/onecard/courses/list',
         component: coursesList,
         meta: {
-           requiresAuth: true,
-           title: 'Cursos',
-           breadcrumb: [
-             {
-               breadcrumbActive: 'Cursos'
-             }
-           ]
+            requiresAuth: true,
+            title: 'Cursos',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'Cursos /'
+              },
+              {
+                breadcrumbActive: 'List'
+              }
+            ]
         }
      },
      {
       path: '/onecard/subjects/list',
       component: subjectsList,
       meta: {
-         requiresAuth: true,
-         title: 'Temas',
-         breadcrumb: [
-           {
-             breadcrumbActive: 'Temas'
-           }
-         ]
+        requiresAuth: true,
+        title: 'Temas',
+        breadcrumb: [
+          {
+            breadcrumbInactive: 'Temas /'
+          },
+          {
+            breadcrumbActive: 'List'
+          }
+        ]
       }
    },
      {

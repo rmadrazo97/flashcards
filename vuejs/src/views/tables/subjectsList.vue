@@ -32,7 +32,6 @@
 							<td>{{ props.item.name}}</td>
 							<td>{{ props.item.calories }}</td>
 							<td>{{ props.item.fat }}</td>
-							<td>{{ props.item.carbs }}</td>
 						</template>
 						<template slot="pageText" slot-scope="{ pageStart, pageStop }">
 							From {{ pageStart }} to {{ pageStop }}
@@ -45,7 +44,8 @@
 </template>
 
 <script>
-import api from "../../api";
+// import api from "../../api";
+import axios from 'axios';
 
 export default {
   data() {
@@ -60,30 +60,24 @@ export default {
           text: "ID",
           align: "center",
           sortable: true,
-          value: "name"
+          value: "id_subject"
 		},
 		{
           text: "Curso",
           align: "center",
           sortable: true,
-          value: "name"
+          value: "course_id"
         },
 		{
 			text: "Nombre",
-			value: "calories",
+			value: "name",
 			sortable: true,
 		},
         {
 			text: "Descripción",
-			value: "fat",
+			value: "description",
 			sortable: true
-		},
-		{
-			text: "Color",
-			value: "carbs",
-			sortable: true	
-		},
-
+		}
       ],
       items: []
     };
@@ -92,16 +86,21 @@ export default {
     this.getTablesData();
   },
   methods: {
-    getTablesData() {
-      api
-        .get("vuely/tablesData.js")
-        .then(response => {
-          this.loader = false;
-          this.items = response.data;
-        })
-        .catch(error => {
+        getTablesData() {
+		var config = {
+		method: 'get',
+		url: 'https://2wdg4glmpb.execute-api.us-west-1.amazonaws.com/Test1/subject/user/1',
+		headers: { }
+		};
+
+		axios(config).then(response => {
+			console.log(response.data);
+			this.loader = false;
+			this.items = response.data;
+        }).catch(error => {
           console.log(error);
-        });
+		});
+		
     }
   }
 };

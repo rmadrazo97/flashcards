@@ -23,15 +23,13 @@
 					<router-view></router-view>
 				</transition>
 			</v-content>
-			<!-- app customizer -->
-			<app-customizer></app-customizer>
+
 		</template>
 	</div>
 </template>
 
 <script>
 import Header from "Components/Header/Header.vue";
-import Customizer from "Components/Customizer/Customizer";
 import AppHorizontalMenus from "Components/AppHorizontalMenus/AppHorizontalMenus";
 import { mapGetters } from "vuex";
 import Sidebar from "Components/Sidebar/Sidebar";
@@ -44,7 +42,6 @@ export default {
   },
   components: {
     appHeader: Header,
-    appCustomizer: Customizer,
     appHorizontalMenus: AppHorizontalMenus,
     appSidebar: Sidebar
   },

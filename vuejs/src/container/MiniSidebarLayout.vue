@@ -25,7 +25,6 @@
 <script>
 import { mapGetters } from "vuex";
 import Header from "Components/Header/Header.vue";
-import Customizer from "Components/Customizer/Customizer";
 import Tour from "Components/Tour/Tour";
 import AppConfig from "Constants/AppConfig";
 
@@ -37,7 +36,6 @@ export default {
   },
   components: {
     appHeader: Header,
-    appCustomizer: Customizer,
     Tour
   },
   computed: {

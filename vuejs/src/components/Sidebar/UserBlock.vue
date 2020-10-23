@@ -1,10 +1,10 @@
 <template>
    <v-list-item class="sidebar-profile">
 		<v-list-item-avatar>
-			<img src="/static/avatars/user-13.jpg" alt="avatar" height="40" width="40" class="img-responsive" />
+			<img src="https://img.icons8.com/color/48/000000/donald-trump.png" alt="avatar" height="40" width="40" class="img-responsive" />
 		</v-list-item-avatar>
 		<v-list-item-content class="ml-3">
-			<v-list-item-title><span>John Leider</span></v-list-item-title>
+			<v-list-item-title><span>Donal Tromp</span></v-list-item-title>
 		</v-list-item-content>
 		<v-menu 
 			bottom
@@ -22,7 +22,7 @@
 			</template>
 			<div class="dropdown-content">
 				<div class="dropdown-top white--text primary">
-					<span class="white--text fs-14 fw-bold d-block">John Leider</span>
+					<span class="white--text fs-14 fw-bold d-block">Donal Tromp</span>
 					<span class="d-block fs-12 fw-normal">info@example.com</span>
 				</div>
 				<v-list class="dropdown-list">
@@ -53,24 +53,6 @@ export default {
 	data() {
 		return {
 			userLinks: [
-				{
-					id: 1,
-					title: 'message.userProfile',
-					icon: 'ti-user mr-3 primary--text',
-					path: '/users/user-profile'
-				},
-				{
-					id: 2,
-					title: 'message.inbox',
-					icon: 'ti-email mr-3 success--text',
-					path: '/inbox'
-				},
-				{
-					id: 3,
-					title: 'message.usersList',
-					icon: 'ti-bell mr-3 info--text',
-					path: '/users/users-list'
-				},
 				{
 					id: 4,
 					title: 'message.logOut',

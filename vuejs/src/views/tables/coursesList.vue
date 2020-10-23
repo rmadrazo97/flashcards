@@ -27,11 +27,11 @@
 					>
 						<template slot="items" slot-scope="props">
 							<td class="">
-								{{ props.item.name }}	
+								{{ props.item.id_course }}	
 							</td>
-							<td>{{ props.item.calories }}</td>
-							<td>{{ props.item.fat }}</td>
-							<td>{{ props.item.carbs }}</td>
+							<td>{{ props.item.name }}</td>
+							<td>{{ props.item.description }}</td>
+							<td>{{ props.item.color }}</td>
 						</template>
 						<template slot="pageText" slot-scope="{ pageStart, pageStop }">
 							From {{ pageStart }} to {{ pageStop }}
@@ -44,7 +44,9 @@
 </template>
 
 <script>
-import api from "../../api";
+// import api from "../../api";
+import axios from 'axios';
+
 
 export default {
   data() {
@@ -59,21 +61,21 @@ export default {
           text: "ID",
           align: "center",
           sortable: true,
-          value: "name"
+          value: "id_course"
         },
 		{
 			text: "Nombre",
-			value: "calories",
 			sortable: true,
+			value: "name"
 		},
         {
 			text: "Descripción",
-			value: "fat",
+			value: "description",
 			sortable: true
 		},
 		{
 			text: "Color",
-			value: "carbs",
+			value: "color",
 			sortable: true	
 		},
 
@@ -86,16 +88,30 @@ export default {
   },
   methods: {
     getTablesData() {
-      api
-        .get("vuely/tablesData.js")
-        .then(response => {
-          this.loader = false;
-          this.items = response.data;
-        })
-        .catch(error => {
+		var config = {
+		method: 'get',
+		url: 'https://2wdg4glmpb.execute-api.us-west-1.amazonaws.com/Test1/course/owner/1',
+		headers: { }
+		};
+
+		axios(config).then(response => {
+			console.log(response.data);
+			this.loader = false;
+			this.items = response.data;
+        }).catch(error => {
           console.log(error);
-        });
+		});
+		
     }
   }
 };
 </script>
+
+
+<style scoped>
+	.truncate-me {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+</style>

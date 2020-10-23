@@ -45,7 +45,8 @@
 </template>
 
 <script>
-import api from "../../api";
+// import api from "../../api";
+import axios from 'axios';
 
 export default {
   data() {
@@ -60,27 +61,27 @@ export default {
           text: "ID",
           align: "center",
           sortable: true,
-          value: "name"
+          value: "id_flash_card"
 		},
 		{
           text: "Tema",
           align: "center",
           sortable: true,
-          value: "name"
+          value: "subject_id"
         },
 		{
 			text: "Titulo",
-			value: "calories",
+			value: "title",
 			sortable: true,
 		},
         {
 			text: "Frente",
-			value: "fat",
+			value: "front",
 			sortable: true
 		},
 		{
 			text: "Detras",
-			value: "carbs",
+			value: "back",
 			sortable: true	
 		},
 
@@ -93,15 +94,20 @@ export default {
   },
   methods: {
     getTablesData() {
-      api
-        .get("vuely/tablesData.js")
-        .then(response => {
-          this.loader = false;
-          this.items = response.data;
-        })
-        .catch(error => {
+		var config = {
+		method: 'get',
+		url: 'https://2wdg4glmpb.execute-api.us-west-1.amazonaws.com/Test1/flashcard/user/1',
+		headers: { }
+		};
+
+		axios(config).then(response => {
+			console.log(response.data);
+			this.loader = false;
+			this.items = response.data;
+        }).catch(error => {
           console.log(error);
-        });
+		});
+		
     }
   }
 };
