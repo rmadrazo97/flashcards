@@ -75,6 +75,7 @@ export default {
       this.close = true;
     },
     onChangeTab(value) {
+      //Test comment
       this.$emit("onChangeTabCallback", value);
     }
   }
