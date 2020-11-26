@@ -7,10 +7,15 @@ describe('AppCard.vue', () => {
     let wrapper = shallowMount(AppCard, {
       methods: { onColapse: ()=>  {}}
     });
+
     it("renders", ()=>{
       expect(wrapper.exists()).toBe(true)
     })
 
+    test("AppCard is a Vue instance?", () => {
+      wrapper = mount(AppCard);
+      expect(wrapper.exists()).toBe(true);
+    });
   })
 
 })
