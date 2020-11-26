@@ -21,8 +21,13 @@ stages {
         --reporter-junit-export "newman/report.xml"' 
         }
     }
-
+    stage('System Testing'){
+        dir('systemTesting'){
+            sh 'mvn test'
+        }
+    }
  }
+ 
  post {
         always {
             junit 'newman/report.xml'

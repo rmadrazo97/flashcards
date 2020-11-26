@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestAutomation" data-provider-thread-count="15">
+
+    <test name="TestSuite">
+
+        <groups>
+            <run>
+                <include name="all"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="systemTesting.InitialSystemTests"/>
+            <class name="systemTesting.SessionTests"/>
+            <class name="systemTesting.ForgetPassword"></class>
+            <class name="systemTesting.MainNavigation"></class>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="listeners.AutomationListener"/>
+    </listeners>
+</suite>
