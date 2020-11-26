@@ -4,9 +4,11 @@ pipeline {
 stages {
  stage('Unit Testing') {
     steps {
-        sh 'cd vuejs'
         sh 'ls'
         sh 'pwd '
+        sh 'cd vuejs'
+        sh 'ls' 
+        sh 'pwd'
         sh 'npm run test:unit'
     }
  }
