@@ -6,7 +6,7 @@ stages {
     steps {
         sh 'cd vuejs'
         sh 'ls'
-        sh 'pwd'
+        sh 'pwd '
         sh 'npm run test:unit'
     }
  }
