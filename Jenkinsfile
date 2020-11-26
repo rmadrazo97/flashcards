@@ -5,6 +5,7 @@ stages {
  stage('Unit Testing') {
     steps {
         sh 'cd vuejs'
+        sh 'ls'
         sh 'npm run test:unit'
     }
  }
