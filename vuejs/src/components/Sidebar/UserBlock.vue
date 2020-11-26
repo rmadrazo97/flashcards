@@ -4,7 +4,7 @@
 			<img src="https://img.icons8.com/color/48/000000/donald-trump.png" alt="avatar" height="40" width="40" class="img-responsive" />
 		</v-list-item-avatar>
 		<v-list-item-content class="ml-3">
-			<v-list-item-title><span>Donal Tromp</span></v-list-item-title>
+			<v-list-item-title id="profileListItem"><span>Donal Tromp</span></v-list-item-title>
 		</v-list-item-content>
 		<v-menu 
 			bottom
@@ -16,7 +16,7 @@
 			transition="slide-y-transition"
 		>	
 			<template v-slot:activator="{ on }">
-				<v-btn dark icon v-on="on" class="ma-0">
+				<v-btn id="verticalMenuBtn" dark icon v-on="on" class="ma-0">
 					<v-icon>more_vert</v-icon>
 				</v-btn>
 			</template>

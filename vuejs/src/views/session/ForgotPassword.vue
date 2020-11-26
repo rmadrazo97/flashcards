@@ -16,12 +16,13 @@
 					<p class="fs-14">{{$t('message.enterYourEmailToSendYouAResetLink')}}.</p>
 					<v-form v-model="valid" class="mb-6">
 							<v-text-field 
+							id="resetEmail"
 							label="E-mail ID" 
 							v-model="email" 
 							:rules="emailRules" 
 							required
 						></v-text-field>						
-						<v-btn color="primary" block to="/session/reset-password"	>Send Email</v-btn>
+						<v-btn id="resetPasswordBtn" color="primary" block to="/session/reset-password"	>Send Email</v-btn>
 					</v-form>
 					<div>
 						<router-link to="/session/login">{{$t('message.backToSignIn')}}</router-link>

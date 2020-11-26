@@ -11,15 +11,17 @@
 								width="78" 
 								height="78" 
 							/>
-							<h2 class="mb-4">One Card</h2>
+							<h2 id="loginTitle" class="mb-4">One Card</h2>
 							<v-form v-model="valid" class="mb-5">
 								<v-text-field 
+                  id="loginEmail"
 									label="E-mail " 
 									v-model="email" 
 									:rules="emailRules" 
 									required
 								></v-text-field>
 								<v-text-field 
+                  id="loginPassword"
 									label="Password" 
 									v-model="password" 
 									type="password" 
@@ -33,8 +35,8 @@
 								></v-checkbox>
 								<router-link class="mb-2" to="/session/forgot-password">{{$t('message.forgotPassword')}}?</router-link>
 								<div>
-									<v-btn large @click="submit" block color="primary" class="mb-2">{{$t('message.loginNow')}}</v-btn>
-									<v-btn large @click="onCreateAccount" block color="warning" class="mb-2">{{$t('message.createAccount')}}</v-btn>
+									<v-btn id="loginNowBtn" large @click="submit" block color="primary" class="mb-2">{{$t('message.loginNow')}}</v-btn>
+									<v-btn id="createAccountBtn" large @click="onCreateAccount" block color="warning" class="mb-2">{{$t('message.createAccount')}}</v-btn>
 								</div>
 							</v-form>
 						</div>

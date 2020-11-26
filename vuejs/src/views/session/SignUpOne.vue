@@ -17,6 +17,7 @@
 							</p>
 							<v-form v-model="valid" class="mb-5">
 								<v-text-field 
+									id="signUpUsername"
 									label="Username" 
 									v-model="name" 
 									:rules="nameRules" 
@@ -24,19 +25,21 @@
 									required
 								></v-text-field>
 								<v-text-field 
+									id="signUpEmail"
 									label="E-mail ID" 
 									v-model="email" 
 									:rules="emailRules" 
 									required
 								></v-text-field>
 								<v-text-field 
+									id="signUpPassword"
 									label="Password" 
 									v-model="password" 
 									:rules="passwordRules" 
 									type="password" 
 									required
 								></v-text-field>
-								<v-btn large @click="submit" block color="primary" class="mb-4">{{$t('message.signUp')}}</v-btn>
+								<v-btn id="signUpBtn" large @click="submit" block color="primary" class="mb-4">{{$t('message.signUp')}}</v-btn>
 								<p>{{$t('message.bySigningUpYouAgreeTo')}} {{brand}}</p>
 								<router-link to="">{{$t('message.termsOfService')}}</router-link>
 							</v-form>

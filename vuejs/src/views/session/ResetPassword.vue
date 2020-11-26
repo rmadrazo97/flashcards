@@ -16,6 +16,7 @@
 					<p class="fs-14">{{$t('message.pleaseEnterYourPasswordToReset')}}.</p>
 					<v-form v-model="valid" class="5">
 						<v-text-field 
+							id="resetNewPassword"
 							label="New Password" 
 							v-model="newPassword" 
 							type="password" 
@@ -23,6 +24,7 @@
 							required
 						></v-text-field>
 						<v-text-field 
+							id="resetNewPassword2"
 							label="Confirm Password" 
 							v-model="confirmPassword" 
 							type="password" 

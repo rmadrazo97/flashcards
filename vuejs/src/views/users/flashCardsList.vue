@@ -13,10 +13,10 @@
               </v-chip>
 							<p>{{ course.description.substring(0,65)}}...</p>
 						</div>
-						<v-btn class="ml-3" color="primary" @click.stop="dialog = true">
+						<v-btn :id="'temasBtn' + index" class="ml-3" color="primary" @click.stop="dialog = true">
 							<v-icon class="mr-2">mdi-bookshelf</v-icon> Temas
 						</v-btn>
-            <v-btn class="ml-3" color="info" @click.stop="dialog2 = true">
+            <v-btn :id="'flashBtn' + index" class="ml-3" color="info" @click.stop="dialog2 = true">
 							<v-icon class="mr-2">mdi-card-bulleted</v-icon> FlashCards
 						</v-btn>
 					</div>
@@ -26,7 +26,7 @@
     <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" overlay=false scrollable>
       <v-card>
         <v-toolbar color="primary" dark class="dialog-toolbar mb-6">
-          <v-btn icon @click.native="dialog = false" dark>
+          <v-btn id="temasClose" icon @click.native="dialog = false" dark>
             <v-icon>close</v-icon>
           </v-btn>
           <v-toolbar-title>Temas</v-toolbar-title>
@@ -35,10 +35,10 @@
         </v-toolbar>
         <v-card-text>
           <h3>Matemáticas</h3>
-          <v-btn class="ml-10 mb-2" color="warning" @click.stop="dialog2 = !dialog2">Ver FlashCards</v-btn>
+          <v-btn id="mateBtn" class="ml-10 mb-2" color="warning" @click.stop="dialog2 = !dialog2">Ver FlashCards</v-btn>
           <v-divider></v-divider>
           <h3>Algebra</h3>
-          <v-btn class="ml-10 mb-2" color="warning" @click.stop="dialog2 = !dialog2">Ver FlashCards</v-btn>
+          <v-btn id="algebraBtn" class="ml-10 mb-2" color="warning" @click.stop="dialog2 = !dialog2">Ver FlashCards</v-btn>
           <v-divider></v-divider>
         </v-card-text>
         <div style="flex: 1 1 auto;"></div>
@@ -47,7 +47,7 @@
     <v-dialog v-model="dialog2" fullscreen transition="dialog-bottom-transition" overlay=false scrollable>
       <v-card>
         <v-toolbar color="primary" dark class="dialog-toolbar mb-6">
-          <v-btn icon @click.native="dialog2 = false" dark>
+          <v-btn id="flashcardsClose" icon @click.native="dialog2 = false" dark>
             <v-icon>close</v-icon>
           </v-btn>
           <v-toolbar-title>FlashCards</v-toolbar-title>
