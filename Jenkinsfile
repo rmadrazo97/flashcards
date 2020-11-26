@@ -7,6 +7,7 @@ stages {
             dir("vuejs") {
                 sh 'ls'
                 sh "pwd"
+                sh 'npm install'
                 sh 'npm run test:unit'
             }
             
