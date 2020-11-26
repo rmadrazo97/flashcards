@@ -24,7 +24,11 @@ stages {
     stage('System Testing'){
         steps {
             dir('systemTesting'){
-                sh 'mvn test'
+                withMaven{
+                    sh "mvn clean verify"
+                    sh 'mvn test'
+                }
+                
             }
         }
 
