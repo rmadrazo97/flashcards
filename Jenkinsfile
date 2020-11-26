@@ -22,9 +22,12 @@ stages {
         }
     }
     stage('System Testing'){
-        dir('systemTesting'){
-            sh 'mvn test'
+        steps {
+            dir('systemTesting'){
+                sh 'mvn test'
+            }
         }
+
     }
  }
  
