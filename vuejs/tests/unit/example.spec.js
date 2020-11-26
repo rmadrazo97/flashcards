@@ -1,12 +1,19 @@
 import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import AppCard from '@/components/AppCard/AppCard.vue'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
+
+describe('AppCard.vue', () => {
+  beforeEach(() => {
+    let wrapper = shallowMount(AppCard, {
+      methods: { onColapse: ()=>  {}}
+    });
+    it("renders", ()=>{
+      expect(wrapper.exists()).toBe(true)
     })
-    expect(wrapper.text()).toMatch(msg)
+
   })
+
 })
+
+
+
