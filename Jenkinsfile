@@ -35,7 +35,6 @@ stages {
                 sh "pwd"
                 sh "npm install"
                 sh "npm run build"
-                sh "firebase deploy"
             }
         }
 
