@@ -29,6 +29,17 @@ stages {
         }
 
     }
+    stage("Deploy to Firebase"){
+        steps{
+            dir("vuejs") {
+                sh "pwd"
+                sh "npm install"
+                sh "npm run build"
+                sh "firebase deploy"
+            }
+        }
+
+    }
  }
  
  post {
