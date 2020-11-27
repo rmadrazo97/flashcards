@@ -23,10 +23,8 @@ stages {
     }
     stage("Chrome"){
         steps{
-                dir("C:/Users/jmadrazo/Desktop/testing/AutomationSystemTesting") {
-                    node('windows-node'){
-                    bat 'mvn clean test'
-                }
+                node('windows-node'){
+                bat 'cd ../../../AutomationSystemTesting && mvn clean test'
             }
         }
 
