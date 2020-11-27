@@ -25,7 +25,7 @@ stages {
     stage("Chrome"){
         node('myNode'){
             checkout("windows-node")
-            runner 'cd C:\Users\jmadrazo\Desktop\testing\AutomationSystemTesting'
+            runner 'cd C:/Users/jmadrazo/Desktop/testing/AutomationSystemTesting'
             runner 'mvn clean test'
         }
     }
