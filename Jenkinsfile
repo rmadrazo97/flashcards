@@ -1,7 +1,6 @@
 pipeline {
  agent any
 
-def runner = { commandToExecute -> isUnix() ? sh(commandToExecute) : bat(commandToExecute) }
 stages {
     stage('Unit Testing') {
         steps {
@@ -23,11 +22,13 @@ stages {
         }
     }
     stage("Chrome"){
-        node('myNode'){
-            checkout("windows-node")
-            runner 'cd C:/Users/jmadrazo/Desktop/testing/AutomationSystemTesting'
-            runner 'mvn clean test'
+        steps{
+                node('windows-node'){
+                bat 'cd C:/Users/jmadrazo/Desktop/testing/AutomationSystemTesting'
+                bat 'mvn clean test'
+            }
         }
+
     }
  }
  
