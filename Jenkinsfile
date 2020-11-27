@@ -33,10 +33,9 @@ stages {
         steps{
             dir("vuejs") {
                 sh "pwd"
-                sh "npm install"
-                
+                sh "npm run build"
                 sh "firebase login"
-                sh "firebase deploy"
+                sh "firebase deploy --token 4/1AY0e-g6n0tyhYnoJhfKK3FmMxD-xACXgn6ZDgnOjBVFkp3T2GCRt8Iaw5B8 -f"
             }
         }
 
