@@ -21,18 +21,6 @@ stages {
         --reporter-junit-export "newman/report.xml"' 
         }
     }
-    stage('System Testing'){
-        steps {
-            dir('systemTesting'){
-                withMaven(globalMavenSettingsConfig: 'globalMavenSettings'){
-                    sh "mvn clean verify"
-                    sh 'mvn test'
-                }
-                
-            }
-        }
-
-    }
  }
  
  post {
