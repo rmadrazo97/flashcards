@@ -24,7 +24,7 @@ stages {
     stage('System Testing'){
         steps {
             dir('systemTesting'){
-                withMaven{
+                withMaven(globalMavenSettingsConfig: 'globalMavenSettings'){
                     sh "mvn clean verify"
                     sh 'mvn test'
                 }
